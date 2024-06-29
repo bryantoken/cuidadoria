@@ -1,0 +1,26 @@
+<div class="w-full gap-2 flex flex-col">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+    <% content_for :title, "Registro Diário" %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Registro diário</h1>
+    <%= link_to "Novo registro", new_registro_cuidador_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
+
+  <div id="registro_cuidadors" class="min-w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-3">
+    <% @registro_cuidadors.each do |registro_cuidador| %>
+      <div class="bg-white px-10 py-5 max-h-96 rounded-lg grid">
+        <div class="overflow-hidden">
+      <%= render registro_cuidador %>
+        </div>
+ <p>
+        <%= link_to "Mostrar registro", registro_cuidador, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      </p>
+      </div>
+
+    <% end %>
+  </div>
+</div>

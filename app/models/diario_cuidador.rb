@@ -1,0 +1,2 @@
+class DiarioCuidador < ApplicationRecord
+end

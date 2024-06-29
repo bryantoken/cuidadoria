@@ -1,0 +1,24 @@
+<div class="mx-auto md:w-2/3 w-full flex flex-col items-center">
+  <div class="w-full flex items-start">
+  <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <%= link_to "Voltar", registro_cuidadors_path, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+  </div>
+  <div class="w-full flex flex-col items-center gap-3">
+    <h1 class="font-bold text-4xl h-20 items-center flex justify-center bg-white w-3/4 shadow rounded-lg">Registro <%= @registro_cuidador.id %> </h1>
+
+<div class="bg-white w-3/4 shadow rounded-lg p-8">
+<%= render @registro_cuidador %>
+
+</div>
+<div class="flex flex-row">
+<%= link_to "Editar registro", edit_registro_cuidador_path(@registro_cuidador), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= button_to "Apagar registro", @registro_cuidador, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-red-400 font-medium text-white" %>
+</div>
+
+  </div>
+
+</div>

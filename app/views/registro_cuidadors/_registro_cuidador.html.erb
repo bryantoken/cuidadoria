@@ -1,0 +1,60 @@
+<div id="<%= dom_id registro_cuidador %>">
+  <% if current_user.admin? %>
+  <% user = User.find(registro_cuidador.user_id) %>
+  <h2 class="font-bold text-2xl">
+  <%= user.name %>
+  </h2>
+
+  <% end %>
+
+  <h2 class="text-xl font-bold">Registro <%= registro_cuidador.id %> </h2>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Criado em</strong>
+    <%= registro_cuidador.created_at%>
+  </p>
+  <p class="my-5">
+  <strong class="block font-medium mb-1">Atualizado em</strong>
+    <%= registro_cuidador.updated_at %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Cuidador:</strong>
+    <%= registro_cuidador.cuidador %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Turno entrada:</strong>
+    <%= registro_cuidador.turno_entrada %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Turno saida:</strong>
+    <%= registro_cuidador.turno_saida %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Assinatura:</strong>
+    <%= registro_cuidador.assinatura %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Refeicoes:</strong>
+    <%= registro_cuidador.refeicoes %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Medicamentos:</strong>
+    <%= registro_cuidador.medicamentos %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Atividades diarias:</strong>
+    <%= registro_cuidador.atividades_diarias %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Observacoes:</strong>
+    <%= registro_cuidador.observacoes %>
+  </p>
+
+</div>
