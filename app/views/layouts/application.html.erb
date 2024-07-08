@@ -11,10 +11,18 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="min-h-screen antialiased flex justify-between bg-gray-100">
+    <body class="min-h-screen antialiased flex flex-col bg-gray-100">
     <%= render 'layouts/navbar' %>
-    <main class="container mx-auto mt-28 px-5 flex mb-8">
+      <% if @is_welcome_route %>
+    <main class="w-full blue-back">
       <%= yield %>
     </main>
+  <% else %>
+    <main class="w-full mt-28 mb-8 px-5">
+      <%= yield %>
+    </main>
+
+  <% end %>
+
   </body>
 </html>

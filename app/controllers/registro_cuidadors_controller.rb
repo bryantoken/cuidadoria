@@ -6,6 +6,7 @@ class RegistroCuidadorsController < ApplicationController
   def index
     if current_user.admin?
     @registro_cuidadors = RegistroCuidador.all
+
   else
     @registro_cuidadors = RegistroCuidador.where(user_id: current_user.id)
   end
