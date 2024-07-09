@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pacientes
   devise_for :users, controllers: { registrations: "users/registrations" }
   get 'welcome/index'
   resources :registro_cuidadors

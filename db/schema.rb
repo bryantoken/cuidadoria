@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_29_165338) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_08_231658) do
   create_table "diario_cuidadors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.date "data"
     t.string "cuidador"
@@ -21,6 +21,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_29_165338) do
     t.text "medicamentos"
     t.text "atividades_diarias"
     t.text "observacoes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pacientes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "nome_completo"
+    t.string "cpf"
+    t.date "data_nascimento"
+    t.string "enfermidade"
+    t.string "estado_civil"
+    t.text "endereco_completo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +49,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_29_165338) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.bigint "paciente_id", null: false
+    t.index ["paciente_id"], name: "index_registro_cuidadors_on_paciente_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
